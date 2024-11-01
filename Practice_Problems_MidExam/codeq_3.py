@@ -27,9 +27,6 @@ def formatting(word: str) -> str:
     AssertionError: Invalid syntax
     '''
 
-    assert word.startswith('python(') and word.endswith(')'), 'Invalid syntax'
-    assert number_str.lstrip('-').isdigit(), 'Invalid parameter'
-
     word = word.strip()
     assert word.startswith('print(') and word.endswith(')'), 'Invalid syntax'
 
