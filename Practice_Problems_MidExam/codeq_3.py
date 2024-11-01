@@ -1,4 +1,3 @@
-import doctest
 def formatting(word: str) -> str:
 
     '''
@@ -28,6 +27,8 @@ def formatting(word: str) -> str:
     AssertionError: Invalid syntax
     '''
 
+    assert word.startswith('python(') and word.endswith(')'), 'Invalid syntax'
+    assert number_str.lstrip('-').isdigit(), 'Invalid parameter'
 
     word = word.strip()
     assert word.startswith('print(') and word.endswith(')'), 'Invalid syntax'
@@ -36,6 +37,3 @@ def formatting(word: str) -> str:
     assert number_str.lstrip('-').isdigit(), 'Invalid parameter'
 
     return f'return {number_str}'
-
-
-doctest.testmod()
