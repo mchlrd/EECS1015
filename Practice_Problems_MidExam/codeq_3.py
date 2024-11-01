@@ -1,3 +1,4 @@
+import doctest
 def formatting(word: str) -> str:
 
     '''
@@ -6,7 +7,7 @@ def formatting(word: str) -> str:
     >>> formatting("print(0)")
     'return 0'
     >>> formatting("print(24357987862)")
-    'return 24357987862
+    'return 24357987862'
     >>> formatting("print(2)")
     'return 2'
     >>> formatting("print(-875)")
@@ -24,14 +25,17 @@ def formatting(word: str) -> str:
     >>> formatting("print27)")
     Traceback (most recent call last):
     ...
-    Assertion Error: Invalid syntax
+    AssertionError: Invalid syntax
     '''
 
-    assert word.startswith('python(') and word.endswith(')'), 'Invalid syntax'
-    assert number_str.lstrip('-').isdigit(), 'Invalid parameter'
 
     word = word.strip()
+    assert word.startswith('print(') and word.endswith(')'), 'Invalid syntax'
 
     number_str = word[6:-1]
+    assert number_str.lstrip('-').isdigit(), 'Invalid parameter'
 
     return f'return {number_str}'
+
+
+doctest.testmod()
