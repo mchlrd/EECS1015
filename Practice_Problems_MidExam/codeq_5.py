@@ -1,11 +1,6 @@
-expression = input('Enter expression: ')
+def right_justify(s):
+    columnCount = 70-len(s)
+    whites = ' '*columnCount
+    return whites + s
 
-pound_symbol = expression.find('#')
-
-x = int(expression[:pound_symbol])
-
-y = int(expression[pound_symbol + 1:])
-
-result = x * x - y * y
-
-print(result)
+print(right_justify('monty'))
