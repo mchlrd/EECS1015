@@ -1,5 +1,3 @@
-import doctest
-
 def formatting(word: str) -> str:
 
     '''
@@ -36,5 +34,3 @@ def formatting(word: str) -> str:
     assert number_str.lstrip('-').isdigit(), 'Invalid parameter'
 
     return f'return {number_str}'
-
-doctest.testmod()
